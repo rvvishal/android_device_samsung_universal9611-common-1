@@ -15,9 +15,9 @@
 #
 
 ### PROPRIETARY VENDOR FILES
-$(call inherit-product, vendor/samsung/gta4xl-common/gta4xl-common-vendor.mk)
+$(call inherit-product, vendor/samsung/universal9611-common/universal9611-common-vendor.mk)
 
-PLATFORM_PATH := device/samsung/gta4xl-common
+PLATFORM_PATH := device/samsung/universal9611-common
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
