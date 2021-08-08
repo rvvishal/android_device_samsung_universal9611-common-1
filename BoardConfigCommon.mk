@@ -66,8 +66,8 @@ BOARD_KERNEL_PAGESIZE        := 2048
 BOARD_KERNEL_IMAGE_NAME      := Image
 # Build a device tree overlay
 BOARD_KERNEL_SEPARATED_DTBO  := true
-BOARD_DTBO_CFG               := $(PLATFORM_PATH)/kernel/$(TARGET_DEVICE).cfg
-TARGET_BOOTLOADER_IS_2ND := true
+BOARD_DTBO_CFG               := $(PLATFORM_PATH)/../$(TARGET_DEVICE)/kernel/$(TARGET_DEVICE).cfg
+#TARGET_BOOTLOADER_IS_2ND := true
 
 # See `bbootimg -i boot.img`
 BOARD_DTB_OFFSET              := 0x00000000
