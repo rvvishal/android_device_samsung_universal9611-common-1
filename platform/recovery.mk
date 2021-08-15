@@ -1,7 +1,5 @@
-### FASTBOOTD
-PRODUCT_PACKAGES += \
-    fastbootd
 
-### RECOVERY
+# Recovery
 PRODUCT_PACKAGES += \
-    init.recovery.exynos9611.rc
+    fastbootd \
+    init.recovery.exynos9610.rc
