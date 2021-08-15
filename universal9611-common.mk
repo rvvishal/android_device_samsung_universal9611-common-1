@@ -24,17 +24,9 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 400dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
-PRODUCT_CHARACTERISTICS := tablet
-
-# Dynamic Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(PLATFORM_PATH) \
-    hardware/google/interfaces \
-    hardware/google/pixel \
-    hardware/samsung/aidl/power-libperfmgr
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay

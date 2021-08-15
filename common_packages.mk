@@ -112,14 +112,12 @@ PRODUCT_PACKAGES += \
    libhwbinder \
    libhwbinder.vendor
 
-# INIT #
+# Init
 PRODUCT_PACKAGES += \
-    fstab.exynos9611 \
-    init.exynos9611.rc \
-    init.exynos9611.root.rc \
-    init.exynos9611.usb.rc \
-    init.gps.rc \
-    ueventd.exynos9611.rc
+    init.exynos9610.rc \
+    init.exynos9610.usb.rc \
+    ueventd.exynos9610.rc \
+    wifi_sec.rc
 
 # KEYLAYOUT #
 PRODUCT_COPY_FILES += \
@@ -212,14 +210,11 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
-# POWER #
+# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3-service.samsung-libperfmgr \
-    libperfmgr.vendor
+    android.hardware.power@1.0-service.universal9611
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/config/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-    
+
 # PUBLIC LIBRARIES #
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -236,10 +231,11 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
     android.hardware.radio.deprecated@1.0
     
-# RECOVERY #
+# Recovery
 PRODUCT_PACKAGES += \
-    init.recovery.exynos9611.rc \
-    ueventd.recovery.exynos9611.rc
+    fastbootd \
+    init.recovery.exynos9610.rc
+
 
 # RENDERSCRIPT #
 PRODUCT_PACKAGES += \
@@ -291,6 +287,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
 
+# VNDK
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcutils-v29.so \
+    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libcutils-v29.so
+
+
 # WIFI #
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0 \
@@ -307,3 +309,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant
 
 PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/config/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(COMMON_PATH)/config/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(COMMON_PATH)/config/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
