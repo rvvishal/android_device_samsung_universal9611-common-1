@@ -97,11 +97,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
-### POWER
+# Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.samsung-libperfmgr \
-    libperfmgr.vendor:64 \
-    pixel-power-ext-ndk_platform.vendor:64
+    android.hardware.power@1.0-service.universal9611
+
 
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
