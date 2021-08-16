@@ -22,6 +22,7 @@ TARGET_BOARD_PLATFORM := universal9611
 TARGET_SOC := exynos9611
 TARGET_BOOTLOADER_BOARD_NAME := universal9611
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_RADIOIMAGE := true
 
 # Enable hardware/samsung
 BOARD_VENDOR := samsung
